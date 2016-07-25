@@ -130,12 +130,12 @@ nav>ul>li:first-child:before {
 	content: "";
 	position: absolute;
 	display: inline-block;
-	margin-top: 32px;
-	width: 70px;
-	height: 1px; 
-	background: linear-gradient(to right,rgba(67,66,65,1) 0%,rgba(67,66,65,0.4) 10%,rgba(67,66,65,0.2) 25%,rgba(211,211,210,0.8) 40%,rgba(211,211,210,1) 50%,
-		                        rgba(211,211,210,1) 60%,rgba(67,66,65,0.8) 70%,rgba(67,66,65,0.4) 85%,rgba(67,66,65,1) 100%);
-	/*box-shadow: 0 0 1px 1px rgb(255,255,255);*/
+	margin: 32px 0 0 10px;
+	width: 50px;
+	height: 1px;
+	background: linear-gradient(to right,rgba(67,66,65,1) 10%,rgba(67,66,65,0.8) 25%,rgba(220,220,220,0.8) 40%,rgba(220,220,220,1) 50%,
+		                        rgba(220,220,220,1) 60%,rgba(67,66,65,0.8) 70%,rgba(67,66,65,1) 100%);
+	/*box-shadow: 0 -1px 0 rgba(255,255,255,0.8),0 1px 0 rgb(255,255,255,0.8);*/
 }
 
 ul {
@@ -184,7 +184,7 @@ li {
 }
 
 .third-nav ul {
-	margin:-30px 0 0 186px;
+	margin:-28px 0 0 186px;
 	text-align: center;
 	border-left: 7px solid rgba(16,16,16,0);
 	background-clip: padding-box;
@@ -210,6 +210,7 @@ li {
 	border-width: 8px 5px 0 5px;
 	border-style: solid;
 	border-color: rgb(233,233,233) transparent transparent transparent; 
+	/*box-shadow: -1px 0 0 rgb(16,16,16); angly&unnoemal*/
 }
 
 .second-nav:hover,
@@ -225,12 +226,26 @@ li {
 	display: block;
 }
 
+.second-nav:hover:after {
+	display: none;
+}
+
 .third-nav:hover {
 	width: 186px;
 	background-color: rgb(20,20,20);
 	border-width: 1px 0;
 	border-style: solid;
 	border-color: rgb(64,64,64);
+}
+
+.third-nav:hover ul:before {
+	content: "";
+	position: absolute;
+	display: inline-block; 
+	margin: 0 0 0 -211px;
+	width: 186px;
+	height: 1px;
+	background-color: rgb(57,56,55);
 }
 
 .third-nav:hover:before {
