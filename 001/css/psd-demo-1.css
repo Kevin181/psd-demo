@@ -230,7 +230,8 @@ li {
 	display: none;
 }
 
-.third-nav:hover {
+.third-nav:hover,
+.third-nav ul >li:hover {
 	width: 186px;
 	background-color: rgb(20,20,20);
 	border-width: 1px 0;
@@ -238,11 +239,33 @@ li {
 	border-color: rgb(64,64,64);
 }
 
+.third-nav ul >li:hover:before {
+	content: "";
+	display: inline-block;
+	float: left;
+	margin-top: 4px;
+	width: 0;
+	height: 0;
+	border-width: 5px 0 5px 8px;
+	border-style: solid;
+	border-color: transparent  transparent transparent rgb(255,212,0);
+}
+
+.third-nav ul >li:hover:after {
+	content: "";
+	float: left;
+	display: inline-block; 
+	margin: -28px 0 0 0;
+	width: 186px;
+	height: 1px;
+	background-color: rgb(57,56,55);
+}
+
 .third-nav:hover ul:before {
 	content: "";
-	position: absolute;
+	float: left;
 	display: inline-block; 
-	margin: 0 0 0 -211px;
+	margin: 0 0 0 -193px;
 	width: 186px;
 	height: 1px;
 	background-color: rgb(57,56,55);
