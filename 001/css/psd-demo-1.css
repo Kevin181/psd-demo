@@ -235,8 +235,9 @@ li {
 .third-nav li:last-child:after {
 	content: "";
 	position: absolute;
+	top: 311px;
+	left: 0;
 	display: inline-block;
-	margin: 33px 0 0 -96px;
 	width: 186px;
 	height: 1px;
 	background-color: rgb(16,16,16);
@@ -338,8 +339,8 @@ li {
 	border-color: transparent  transparent transparent rgb(255,212,0);
 }
 
-/*border-bottom style*/
-.second-nav li:hover:after {
+/*
+	.second-nav li:hover:after {
 	content: "";
 	position: absolute;
 	display: inline-block;
@@ -347,7 +348,7 @@ li {
 	width: 186px;
 	height: 1px;
 	background-color: rgb(57,56,55);
-}
+}*/
 
 li.third-nav:hover:after {
 	content: "";
