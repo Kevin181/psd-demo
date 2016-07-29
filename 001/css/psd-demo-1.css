@@ -22,15 +22,15 @@ a:hover {
 .nav-bar {
 	margin: 180px auto;
 	width: 1212px;
-	background-color: rgb(57,56,55); 
+	background-color: rgb(23,23,22); 
 	border: 6px solid rgb(57,56,55);
 }
 
 .search-bar {
 	position: relative;
-	left: 989px;
-	top: -58px;
-	display: inline-block;
+    top: -42px;
+    right: 6px;
+	float: right;
 }
 
 .search-bar input {
@@ -63,8 +63,6 @@ nav {
 	border: 1px solid black;
 	background-clip: content-box;
 	background-color: rgb(23,23,22);
-	/*background: linear-gradient(to top,rgba(0,0,0,1) 0%,rgba(255,255,255,1) 100%);
-	box-shadow: 5px 5px 5px rgb(0,0,0) inset;*/
 }
 
 .nav-bar:before {
@@ -77,7 +75,6 @@ nav {
 	border-width: 20px 14px 20px 0;
 	border-style: solid;
 	border-color: transparent rgb(57,56,55) transparent transparent; 
-	/*transform: skewX(30deg);*/
 }
 
 .nav-bar:after {
@@ -87,9 +84,6 @@ nav {
 	margin: -42px 0 0 -14px;
 	width: 9px;
 	height: 40px;
-	/*border-width: 0 1px 0 0;
-	border-style: solid;
-	border-color: transparent rgb(0,0,0) transparent transparent; */
 	background-color: rgb(57,56,55);
 }
 
@@ -110,7 +104,7 @@ nav:after {
 	content: "";
 	float: left;
 	display: inline-block;
-	margin: -49px 0 0 -5px;
+	margin: -33px 0 0 -5px;
 	width: 7px;
 	height: 20px; 
 	background-color: rgb(22,22,21);
@@ -158,14 +152,15 @@ nav>ul>li:first-child:after {
 	content: "";
 	position: absolute;
 	display: inline-block;
-	margin: 30px 0 0 -27px;
-	width: 0;
+	margin: 30px 0 0 -40px;
+	width: 30px;
 	height: 4px;
-	box-shadow: 1px 0 13px 1px  #fff,-1px 0 13px 1px  #fff;
+	background: radial-gradient(ellipse at center,#fff 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,0.8) 30%,
+								rgba(255,255,255,0.6) 40%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 100%);
 }
 
 ul {
-	margin-top: 12px;
+	margin: 12px 0 0 0;
 	list-style-type: none;
 }
 
@@ -179,17 +174,16 @@ li {
 	list-style-type: none;
 }
 
-.second-nav ul,
-.third-nav ul {
+.has-sub ul {
 	position: absolute;
 	display: none;
 	width: 186px;
-	padding: 0 0 1px 0;
+	padding: 0;
 	background-color: rgb(57,56,55);
+	background-clip: padding-box;
 }
 
-.second-nav li,
-.third-nav li {
+.has-sub li {
 	margin: 0;
 	padding: 10px 0 11px 0;
 	margin-left: 16px;
@@ -197,66 +191,49 @@ li {
 	height: auto;
 	font-size: 14px;
 	border-top: 1px solid rgb(32,32,32);
+	box-shadow:  0 2px 0 rgb(61,61,60);
 }
 
-.second-nav li:before,
-.third-nav li:before {
-	content: "";
-	position: absolute;
-	display: inline-block;
-	margin-top: 28px;
-	width: 150px;
-	height: 1px;
-	background-color: rgb(61,61,60);
-}
-
-.second-nav li:hover,
-.third-nav li:hover {
+.has-sub li:hover {
 	margin-left: 0;
+	width: 186px;
+	background-color: rgb(20,20,20);
 }
 
-.second-nav li:first-child,
-.third-nav li:first-child {
-	border-top: 1px solid rgb(57,56,55);
+.has-sub li:first-child {
+	border-top: 1px solid transparent;
 } 
 
-.second-nav li:last-child,
-.third-nav li:last-child {
-	padding-bottom: 20px;
-	border-bottom: 0 solid rgb(16,16,16);
+.has-sub li:last-child {
+	box-shadow:  0 2px 0 transparent;
 }
 
-.second-nav li:last-child:before,
-.third-nav li:last-child:before {
-	background-color: transparent;
+.sub-ul {
+	border-top: 5px solid transparent;
+	border-bottom: 1px inset rgb(16,16,16);
+	box-shadow: 0 1px 0 rgb(57,56,55);
 }
 
-.second-nav li:last-child:after,
-.third-nav li:last-child:after {
-	content: "";
-	position: absolute;
-	top: 311px;
-	left: 0;
-	display: inline-block;
-	width: 186px;
-	height: 1px;
-	background-color: rgb(16,16,16);
-}
-
-.second-nav ul {
-	margin: 11px 0 0 11px;
-}
-
-.third-nav ul {
-	margin:-27px 0 0 186px;
+.sub-ul ul {
+	margin: -27px 0 0 186px;
+	padding-bottom: 2px;
 	border-left: 7px solid rgba(16,16,16,0);
-	background-clip: padding-box;
 }
 
-.second-nav:after {
+.sub-ul ul:after {
+	content: "";
+	display: block;
+	height: 1px;
+	width: 186px;
+	background-color: rgb(16,16,16);
+	box-shadow: 0 2px 0 rgb(57,56,55);
+}
+
+.has-sub:after {
 	content: "";
 	position: relative;
 	top: -3px;
+	left: 35px;
 	display: inline-block;
 	width: 0;
 	height: 0;
@@ -265,72 +242,24 @@ li {
 	border-color: rgb(233,233,233) transparent transparent transparent; 
 } 
 
-.third-nav:after {
-	content: "";
-	float: right;
-	display: inline-block;
-	margin: 7px 0 0 0; 
-	width: 0;
-	height: 0;
-	border-width: 5px 4px 0 4px;
-	border-style: solid;
-	border-color: rgb(233,233,233) transparent transparent transparent; 
-	/*box-shadow: -1px 0 0 rgb(16,16,16); angly&unnoemal*/
+nav>ul>.has-sub:after {
+	left: 0;
 }
 
-.second-nav:hover,
- .third-nav:hover{
-	color: rgb(255,212,0);
-}
-
-.second-nav:hover>ul {
+.has-sub:hover>ul {
 	display: block;
 }
 
-.third-nav:hover>ul {
-	display: block;
-}
-
-.second-nav li:hover {
-	width: 186px;
-	background-color: rgb(20,20,20);
-	border-top:  1px solid rgb(57,56,55);
-	
-}
-
-.second-nav li:hover+li {
+.has-sub li:hover+li {
 	border-top:  1px solid rgba(16,16,16,0);
-	
 }
 
-.third-nav ul >li:hover:before {
-	content: "";
-	display: inline-block;
-	float: left;
-	margin: 4px 25px 0 0;
-	width: 0;
-	height: 0;
-	border-width: 4px 0 4px 5px;
-	border-style: solid;
-	border-color: transparent  transparent transparent rgb(255,212,0);
-}
-
-.third-nav:hover ul:before {
-	content: "";
-	float: left;
-	display: inline-block; 
-	margin: 1px 0 0 -193px;
-	width: 186px;
-	height: 1px;
-	background-color: rgb(57,56,55);
-}
-
-.second-nav li:hover:before {
+.has-sub li:hover:before {
 	content: "";
 	position: static;
 	display: inline-block;
 	float: left;
-	margin: 4px 25px 0 0;
+	margin: 4px 20px 0 0;
 	width: 0;
 	height: 0;
 	background-color: transparent;
@@ -339,27 +268,8 @@ li {
 	border-color: transparent  transparent transparent rgb(255,212,0);
 }
 
-/*
-	.second-nav li:hover:after {
-	content: "";
-	position: absolute;
-	display: inline-block;
-	margin: -10px 0 0 -110px;
-	width: 186px;
-	height: 1px;
-	background-color: rgb(57,56,55);
-}*/
-
-li.third-nav:hover:after {
-	content: "";
-	position: static;
-	display: inline-block;
-	margin: 5px 20px 0 0;
-	width: 0;
-	height: 0;
-	background-color: transparent;
+.sub-ul .has-sub:hover:after {
 	border-width: 4px 0 4px 5px;
-	border-style: solid;
 	border-color: transparent  transparent transparent rgb(255,212,0);
 }
 
