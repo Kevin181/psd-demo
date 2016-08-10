@@ -1,64 +1,15 @@
-$container-background-color: rgb(16,16,16);
-$frame-background-color: rgb(57,56,55);
+a {
+	color: rgb(255,255,255);
+	text-decoration: none;
 
-%pseudo-element-base {
-	content: "";
-	display: inline-block;
-}
-
-%sub-ul-style {
-	position: absolute;
-	display: none;
-	width: 186px;
-	padding: 0 0 1px 0;
-	text-align: center;
-	background-color: rgb(57,56,55);
-}
-
-%sub-ul-style {
-	margin: 0;
-	padding: 10px 0 8px 0;
-	width: 150px;
-	height: auto;
-	font-size: 14px;
-	border-bottom: 1px groove rgb(32,32,32);
-}
-
-%sub-ul-border-bottom {
-	width: 186px;
-	border-bottom: 1px solid rgb(16,16,16);
-}
-
-%tri-guide-bottom {
-	content: "";
-	display: inline-block;
-	width: 0;
-	height: 0;
-	border-width: 8px 5px 0 5px;
-	border-style: solid;
-	border-color: rgb(233,233,233) transparent transparent transparent;
-}
-
-%sub-li-hover-font-color { 
-	color: rgb(255,212,0);
-}
-
-%sub-li-hover-style {
-	width: 186px;
-	background-color: rgb(20,20,20);
-	border-width: 1px 0;
-	border-style: solid;
-	border-color: rgb(64,64,64);
-}
-
-%sub-ul-hover-display {
-	display: block;
+	&:hover {
+		color: rgb(255,212,0);
+	}
 }
 
 .container {
 	height: 600px;
 	background-color: rgb(16,16,16);
-
 }
 
 .header {
@@ -70,60 +21,60 @@ $frame-background-color: rgb(57,56,55);
 .nav-bar {
 	margin: 180px auto;
 	width: 1212px;
-	background-color: rgb(57,56,55); 
+	background-color: rgb(23,23,22); 
 	border: 6px solid rgb(57,56,55);
 	&:before,
 	&:after {
 		content: "";
 		position: absolute;
 		display: inline-block;
-		border-style: solid;
 	}
 
 	&:before {
-		margin-left: -28px;
+		margin-left: -27px;
 		width: 0;
 		height: 0;
-		border-width: 20px 15px 20px 0;
-		border-color: transparent rgb(57,56,55) transparent transparent; 
+		border-width: 20px 14px 20px 0;
+		border-style: solid;
+		border-color: transparent rgb(57,56,55) transparent transparent;
 	}
 
 	&:after {
 		margin: -42px 0 0 -14px;
 		width: 9px;
 		height: 40px;
-		border-width: 0 1px 0 0;
-		border-color: transparent rgb(0,0,0) transparent transparent; 
 		background-color: rgb(57,56,55);
 	}
 }
 
 .search-bar {
 	position: relative;
-	left: 983px;
-	top: -56px;
-	display: inline-block;
+    top: -58px;
+    right: 6px;
+	float: right;
 
 	input,
 	button {
-		padding: 0;
-		height: 39px;
+		height: 40px;
 		border-width: 0;
 		vertical-align: middle;
 	}
 
 	input {
+		padding: 0;
 		width: 179px;
 		color: rgb(200,200,200);
-		font-size: 14px;
+		font-size: 13px;
 		text-align: center;
 		background-color: rgb(57,56,55);
 		
 	}
 
 	button {
-		margin-left: -3px;
-		width: 39px;
+		float: right;/*dispel the difference between firefox and chrome*/
+		margin-left: 1px;
+		padding: 0;
+		width: 40px;
 		background: rgb(57,56,55) url(../image/ZOOM.png) no-repeat center;
 		box-sizing: border-box;
 	}
@@ -136,57 +87,73 @@ nav {
 	background-clip: content-box;
 	background-color: rgb(23,23,22);
 
-	&:before,
-	&:after,
-	&>ul:before,
-	&>ul:after,
-	&>ul>li>:first-child:before {
-		@extend %pseudo-element-base;
-	}
-
 	&:before {
+		content: "";
 		position: absolute;
 		z-index: 2;
-		margin: 8px 0 0 -11px;
+		display: inline-block;
+		margin: 9px 0 0 -15px;
 		width: 0;
 		height: 0;
-		border-width: 10px 6px 10px 0;
+		border-width: 10px 11px 10px 0;
 		border-style: solid;
 		border-color: transparent rgb(22,22,21) transparent transparent;
 	}
 
 	&:after {
+		content: "";
 		float: left;
-		margin: -50px 0 0 -7px;
+		display: inline-block;
+		margin: -49px 0 0 -5px;
 		width: 7px;
 		height: 20px; 
 		background-color: rgb(22,22,21);
 	}
 
-	&>ul:before {
-		float: left;
-		margin: -13px 0 0 -43px;
-		width: 1px;
-		height: 9px; 
-		background-color: rgb(0,0,0);
-	}
-
 	&>ul {
-		&:after {
+		&:before {
+			content: "";
 			float: left;
-			margin: 16px 0 0 -43px;
+			display: inline-block;
+			margin: -12px 0 0 -45px;
 			width: 1px;
-			height: 11px; 
-			background-color: rgb(0,0,0);
+			height: 10px; 
+			background-color: rgb(57,56,55);
+			border-width:  0 1px;
+			border-style: solid;
+			border-color: rgb(0,0,0);
 		}
 
-		&>li:first-child:before {
+		&:after {
+			content: "";
+			float: left;
+			display: inline-block;
+			margin: 17px 0 0 -45px;
+			width: 1px;
+			height: 10px; 
+			background-color: rgb(57,56,55);
+			border-width:  0 1px;
+			border-style: solid;
+			border-color: rgb(0,0,0);
+		}
+
+		&>li:first-child:after {
+			content: "";
 			position: absolute;
-			margin: 32px 0 0 10px;
-			width: 50px;
-			height: 1px;
-			background: linear-gradient(to right,rgba(67,66,65,1) 10%,rgba(67,66,65,0.8) 25%,rgba(220,220,220,0.8) 40%,
-										rgba(220,220,220,1) 50%,rgba(220,220,220,1) 60%,rgba(67,66,65,0.8) 70%,rgba(67,66,65,1) 100%);
+			display: inline-block;
+			margin: 30px 0 0 -50px;
+			width: 70px;
+			height: 7px;
+			background: radial-gradient(ellipse at center,#fff 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,0.8) 20%,rgba(255,255,255,0.4) 30%,
+										rgba(255,255,255,0.3) 40%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.1) 60%,transparent 0) top left,
+						linear-gradient(to bottom,rgba(255,255,255,0.2) 1px,transparent 0) 0 40%,
+						linear-gradient(to bottom,rgba(255,255,255,0.2) 1px,transparent 0) 3px 40%;
+			background-size: 50% 50%;
+			background-repeat: no-repeat;
+		}
+
+		&>.has-sub:after {
+			left: 0;
 		}
 	}
 }
@@ -206,116 +173,98 @@ li {
 	list-style-type: none;
 }
 
-.second-nav {
-	&:after {
-		@extend %tri-guide-bottom;
-	} 
-
-	&:hover {
-		@extend %sub-li-hover-font-color;
-		ul {
-			@extend %sub-ul-hover-display;
-		}
-		&:after {
-			display: none;
-		}
-	}
-
+.has-sub {
 	ul {
-		@extend %sub-ul-style;
-		margin-top: 11px;
+		position: absolute;
+		display: none;
+		width: 186px;
+		padding: 0;
+		background-color: rgb(57,56,55);
+		background-clip: padding-box;
 	}
 
 	li {
-		@extend %sub-li-style;
-		&:last-child {
-			@extend %sub-ul-border-bottom;
-		}
-	}
-}
+		margin: 0;
+		padding: 10px 0 11px 0;
+		margin-left: 16px;
+		width: 150px;
+		height: auto;
+		font-size: 14px;
+		border-top: 1px solid rgb(32,32,32);
+		box-shadow:  0 2px 0 rgb(61,61,60);
 
-.third-nav {
-	&:after {
-		@extend %tri-guide-bottom;
-		@extend %sub-li-hover-style;
-		position: absolute;
-		margin: 4px 0 0 20px;
-	} 
-
-	&:hover {
-		@extend %sub-li-hover-font-color;
-
-		ul {
-			@extend %sub-ul-hover-display;
-		}
-
-		&:before {
-			@extend %pseudo-element-base;
-			float: left;
-			margin-top: 4px;
-			width: 0;
-			height: 0;
-			border-width: 5px 0 5px 8px;
-			border-style: solid;
-			border-color: transparent  transparent transparent rgb(255,212,0);
-		}
-
-		&:after {
-			@extend %pseudo-element-base;
-			width: 0;
-			height: 0;
-			border-width: 5px 0 5px 8px;
-			border-style: solid;
-			border-color: transparent  transparent transparent rgb(255,212,0);
-		}
-	}
-
-	ul {
-		@extend %sub-ul-style;
-		margin:-28px 0 0 186px;
-		text-align: center;
-		border-left: 7px solid rgba(16,16,16,0);
-		background-clip: padding-box;
-
-		&:before {
-			@extend %pseudo-element-base;
-			float: left; 
-			margin: 0 0 0 -193px;
+		&:hover {
+			margin-left: 0;
 			width: 186px;
-			height: 1px;
-			background-color: rgb(57,56,55);
-		}
+			background-color: rgb(20,20,20);
 
-		&>li {
-			&:hover {
-				@extend %sub-li-hover-style;
-				&:before {
-					@extend %pseudo-element-base;
-					float: left;
-					margin-top: 4px;
-					width: 0;
-					height: 0;
-					border-width: 5px 0 5px 8px;
-					border-style: solid;
-					border-color: transparent  transparent transparent rgb(255,212,0);
-				}
+			&+li {
+				border-top:  1px solid rgba(16,16,16,0);
+			}
 
-				&:after {
-					@extend %pseudo-element-base;
-					float: left;
-					margin: -28px 0 0 0;
-					width: 186px;
-					height: 1px;
-					background-color: rgb(57,56,55);
-				}
+			&:before {
+				content: "";
+				position: static;
+				display: inline-block;
+				float: left;
+				margin: 4px 20px 0 0;
+				width: 0;
+				height: 0;
+				background-color: transparent;
+				border-width: 4px 0 4px 5px;
+				border-style: solid;
+				border-color: transparent  transparent transparent rgb(255,212,0);
 			}
 		}
+
+		&:first-child {
+			border-top: 1px solid transparent;
+		} 
+
+		&:last-child {
+			box-shadow:  0 2px 0 transparent;
+		}
 	}
 
-	li {
-		@extend %sub-li-style;
-		&:last-child {
-			@extend %sub-ul-border-bottom;
+	&:hover {
+		&>ul {
+			display: block;
 		}
+	}
+
+	&:after {
+		content: "";
+		position: relative;
+		top: -1px;
+		left: 35px;
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-width: 5px 4px 0 4px;
+		border-style: solid;
+		border-color: rgb(233,233,233) transparent transparent transparent; 
+	} 
+}
+
+.sub-ul {
+	margin-top: 11px;
+	border-top: 6px solid transparent;
+	background: linear-gradient(to top, rgb(16,16,16) 1px,transparent 0) 0 151px;
+    background-size:  100% 50%;
+    background-repeat: no-repeat;
+
+    ul {
+		margin: -27px 0 0 186px;
+		padding-bottom: 2px;
+		border-left: 7px solid rgba(16,16,16,0);
+		background: rgb(57,56,55) linear-gradient(to top, rgb(16,16,16) 1px,transparent 0) 0 149px;
+		background-clip: content-box;
+	    background-size:  100% 50%;
+	    background-repeat: no-repeat;
+	}
+
+	.has-sub:hover:after {
+		border-width: 4px 0 4px 5px;
+		border-color: transparent  transparent transparent rgb(255,212,0);
 	}
 }
